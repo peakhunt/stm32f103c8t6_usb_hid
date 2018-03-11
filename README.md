@@ -21,7 +21,7 @@ Here is a demo joystick I built. I've been having some fun using it with retroar
 ![joystick build inside](https://github.com/peakhunt/stm32f103c8t6_usb_hid/blob/master/imgs/IMG_20170916_200453.jpg)
 
 
-The case is actually a small rectangular plastic container ( or basket or whatever). I bought it as less than 2 dollars at a local store and drilled it.
+The case is actually a small rectangular plastic container ( or basket or whatever). I bought it at less than 2 dollars at a local store and drilled it.
 
 Here is the image of PCB I created for the build. It's really primitive simple board and anybody can do it. I just hated all the stupid fragile wiring I had to do before the PCB.
 
