@@ -15,7 +15,7 @@ static volatile uint8_t   _report_write_pos   = 0;
 static volatile uint8_t   _report_read_pos    = 0;
 static volatile uint8_t   _report_count       = 0;
 static volatile uint8_t SendBuffer[USBD_CUSTOMHID_OUTREPORT_BUF_SIZE * MAX_SEND_NDX];
-static uint8_t USBTXBuffer[USBD_CUSTOMHID_OUTREPORT_BUF_SIZE];
+static uint8_t USBTXBuffer[USBD_CUSTOMHID_OUTREPORT_BUF_SIZE + 1];
 static uint8_t   report_state = REPORT_SEND_IDLE;
 
 static uint16_t  btn_list[] =
@@ -91,9 +91,10 @@ usb_gpio_report_queue_do_work(void)
   switch(report_state)
   {
     case REPORT_SEND_IDLE:
-      if(dequeue_usb_report(&USBTXBuffer[0], &USBTXBuffer[1], &USBTXBuffer[2]) == 1)
+      USBTXBuffer[0] = 1;   // report ID
+      if(dequeue_usb_report(&USBTXBuffer[1], &USBTXBuffer[2], &USBTXBuffer[3]) == 1)
       {
-        if(USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, USBTXBuffer, USBD_CUSTOMHID_OUTREPORT_BUF_SIZE) != USBD_OK)
+        if(USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, USBTXBuffer, USBD_CUSTOMHID_OUTREPORT_BUF_SIZE + 1) != USBD_OK)
         {
           report_state = REPORT_SEND_BUSY;
         }
@@ -101,7 +102,7 @@ usb_gpio_report_queue_do_work(void)
       break;
 
     case REPORT_SEND_BUSY:
-      if(USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, USBTXBuffer, USBD_CUSTOMHID_OUTREPORT_BUF_SIZE) == USBD_OK)
+      if(USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, USBTXBuffer, USBD_CUSTOMHID_OUTREPORT_BUF_SIZE + 1) == USBD_OK)
       {
         report_state = REPORT_SEND_IDLE;
       }

@@ -102,8 +102,8 @@ ifeq ($(OS),Darwin)
 BINPATH = /Users/hawk/toolchains/gcc-arm-none-eabi-5_4-2016q3/bin
 STLINKPATH= /opt/local/bin
 else
-BINPATH = /home/hawk/tools/toolchains/cortex-m/gcc-arm-none-eabi-4_9-2014q4/bin
-STLINKPATH= ~/stlink
+BINPATH = /home/hawk/toolchains/gcc-arm-none-eabi-7-2018-q2-update/bin
+STLINKPATH= /usr/local/bin
 endif
 
 PREFIX = arm-none-eabi-
