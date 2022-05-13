@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "joystick-gpio-rescue")(type "Legacy")(uri "${KIPRJMOD}/joystick-gpio-rescue.lib")(options "")(descr ""))
+  (lib (name "stm32")(type "Legacy")(uri "${KIPRJMOD}/library/stm32.lib")(options "")(descr ""))
+)
