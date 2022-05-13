@@ -20,7 +20,7 @@ extern USBD_HandleTypeDef hUsbDeviceFS;
 static uint8_t  _hid_report[5];
 
 static void
-send_report(void)
+fill_report_buf(void)
 {
   // simple brute force approach
   //
@@ -80,6 +80,12 @@ send_report(void)
   // joystick button 6
   // joystick button 7
   // joystick button 8
+}
+
+static void
+send_report(void)
+{
+  fill_report_buf();
 
   if(USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, _hid_report, 4) == USBD_BUSY)
   {
