@@ -16,13 +16,13 @@ As for connection, please refer to the kicad directory. It's gonna cost about $1
 ## my build
 Here is a demo joystick I built. I've been having some fun using it with retroarch. I love kungfu master.
 
-![joystick build](https://github.com/peakhunt/stm32f103c8t6_usb_hid/blob/master/imgs/IMG_20170916_200444.jpg)
+![joystick build](imgs/IMG_20170916_200444.jpg)
 
-![joystick build inside](https://github.com/peakhunt/stm32f103c8t6_usb_hid/blob/master/imgs/IMG_20170916_200453.jpg)
+![joystick build inside](imgs/IMG_20170916_200453.jpg)
 
 
 The case is actually a small rectangular plastic container ( or basket or whatever). I bought it at less than 2 dollars at a local store and drilled it.
 
 Here is the image of PCB I created for the build. It's really primitive simple board and anybody can do it. I just hated all the stupid fragile wiring I had to do before the PCB.
 
-![jostick board](https://github.com/peakhunt/stm32f103c8t6_usb_hid/blob/master/imgs/IMG_20170916_200824.jpg)
+![jostick board](imgs/IMG_20170916_200824.jpg)
