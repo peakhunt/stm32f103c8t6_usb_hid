@@ -42,10 +42,11 @@ extern "C" {
   * @{
   */
 #define CUSTOM_HID_EPIN_ADDR                 0x81U
-#define CUSTOM_HID_EPIN_SIZE                 0x02U
+//#define CUSTOM_HID_EPIN_SIZE                 0x02U hkim
+#define CUSTOM_HID_EPIN_SIZE                 4U
 
 #define CUSTOM_HID_EPOUT_ADDR                0x01U
-#define CUSTOM_HID_EPOUT_SIZE                0x02U
+#define CUSTOM_HID_EPOUT_SIZE                2U
 
 #define USB_CUSTOM_HID_CONFIG_DESC_SIZ       41U
 #define USB_CUSTOM_HID_DESC_SIZ              9U
@@ -59,10 +60,10 @@ extern "C" {
 #endif /* CUSTOM_HID_FS_BINTERVAL */
 
 #ifndef USBD_CUSTOMHID_OUTREPORT_BUF_SIZE
-#define USBD_CUSTOMHID_OUTREPORT_BUF_SIZE  0x02U
+#define USBD_CUSTOMHID_OUTREPORT_BUF_SIZE   2U
 #endif /* USBD_CUSTOMHID_OUTREPORT_BUF_SIZE */
 #ifndef USBD_CUSTOM_HID_REPORT_DESC_SIZE
-#define USBD_CUSTOM_HID_REPORT_DESC_SIZE   163U
+#define USBD_CUSTOM_HID_REPORT_DESC_SIZE    163U
 #endif /* USBD_CUSTOM_HID_REPORT_DESC_SIZE */
 
 #define CUSTOM_HID_DESCRIPTOR_TYPE           0x21U
