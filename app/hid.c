@@ -18,6 +18,7 @@ extern USBD_HandleTypeDef hUsbDeviceFS;
 // total 4 bytes
 //
 static uint8_t  _hid_report[16];
+static uint8_t  _turn = 1;
 
 static void
 fill_report1(uint8_t* buf)
@@ -118,6 +119,7 @@ fill_report2(uint8_t* buf)
 static void
 send_report(void)
 {
+#if 0
   fill_report1(&_hid_report[0]);
   fill_report2(&_hid_report[4]);
 
@@ -131,6 +133,35 @@ send_report(void)
   else
   {
   }
+#else
+  //
+  // XXX
+  //
+  // it looks like there is no way to send two reports in one packet.
+  // if we do, host accepts it as error and HID totally stops.
+  //
+  // so with this alternating scheme, we can get 500hz input report
+  // and this was verified with Wireshark USB capture.
+  //
+  if(_turn == 1)
+  {
+    fill_report1(&_hid_report[0]);
+    _turn = 2;
+  }
+  else
+  {
+    fill_report2(&_hid_report[0]);
+    _turn = 1;
+  }
+
+  if(USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, _hid_report, 4) == USBD_BUSY)
+  {
+    // XXX debug point
+    // we are not expecting to receive any busy return with this mechanism
+    while(1)
+      ;
+  }
+#endif
 }
 
 static void

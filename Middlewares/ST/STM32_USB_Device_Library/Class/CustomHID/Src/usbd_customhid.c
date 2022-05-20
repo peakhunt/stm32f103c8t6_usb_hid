@@ -176,7 +176,7 @@ __ALIGN_BEGIN static uint8_t USBD_CUSTOM_HID_CfgFSDesc[USB_CUSTOM_HID_CONFIG_DES
 
   CUSTOM_HID_EPIN_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
   0x03,          /*bmAttributes: Interrupt endpoint*/
-  CUSTOM_HID_EPIN_SIZE, /*wMaxPacketSize: 2 Byte max */
+  CUSTOM_HID_EPIN_SIZE, /*wMaxPacketSize */
   0x00,
   CUSTOM_HID_FS_BINTERVAL,          /*bInterval: Polling Interval */
   /* 34 */
@@ -235,7 +235,7 @@ __ALIGN_BEGIN static uint8_t USBD_CUSTOM_HID_CfgHSDesc[USB_CUSTOM_HID_CONFIG_DES
 
   CUSTOM_HID_EPIN_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
   0x03,          /*bmAttributes: Interrupt endpoint*/
-  CUSTOM_HID_EPIN_SIZE, /*wMaxPacketSize: 2 Byte max */
+  CUSTOM_HID_EPIN_SIZE, /*wMaxPacketSize */
   0x00,
   CUSTOM_HID_HS_BINTERVAL,          /*bInterval: Polling Interval */
   /* 34 */
@@ -294,7 +294,7 @@ __ALIGN_BEGIN static uint8_t USBD_CUSTOM_HID_OtherSpeedCfgDesc[USB_CUSTOM_HID_CO
 
   CUSTOM_HID_EPIN_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
   0x03,          /*bmAttributes: Interrupt endpoint*/
-  CUSTOM_HID_EPIN_SIZE, /*wMaxPacketSize: 2 Byte max */
+  CUSTOM_HID_EPIN_SIZE, /*wMaxPacketSize */
   0x00,
   CUSTOM_HID_FS_BINTERVAL,          /*bInterval: Polling Interval */
   /* 34 */
